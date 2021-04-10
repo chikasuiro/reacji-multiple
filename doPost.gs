@@ -10,7 +10,7 @@ function doPost(e) {
   const json = JSON.parse(e.postData.getDataAsString());
   const event = json.event;
 
-  if (VERIFICATION_TOKEN != json.token) {
+  if (json.token != VERIFICATION_TOKEN) {
     throw new Error('Invalid token.');
   }
 
